@@ -89,8 +89,8 @@ footer, header, hgroup, menu, nav, section {
 	font-family: "Proxima Nova Rg";
 	font-weight: normal;
 	font-style: normal;
-	overflow: hidden;
 	width: 1914px;
+	overflow: hidden;
 }
 header {
 	background: url(images/football.jpg) no-repeat 50% 50% #0a0e34;
@@ -152,9 +152,9 @@ header {
 	border-radius: 50px;
 }
 .line-position {
-	position:absolute;
+	position:relative;
 	top: 40%;
-	left: 20%;
+	left: -20%;
 	z-index:2;
 }
 .navigation {

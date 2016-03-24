@@ -89,7 +89,7 @@ footer, header, hgroup, menu, nav, section {
 	font-family: "Proxima Nova Rg";
 	font-weight: normal;
 	font-style: normal;
-	width: 1914px;
+	max-width: 1900px;
 	overflow: hidden;
 }
 header {
@@ -126,23 +126,24 @@ header {
 .button_panel {
 	clear: both;
 	width: 750px;
-	padding: 0px auto;
+	padding: 0px;
 	margin: 0 auto;
 	margin-top: 10%;
 }
 .caption {
 	margin: 16% auto 0px auto;
-	width: 70%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border: 1px solid blue;
 }
 .caption .first-part {
 	position: relative;
 	z-index: 3;
-	left: -10%;
 }
 .caption .second-part {
 	position: relative;
 	z-index: 1;
-	left:25%;
+	margin-left: 25%;
 }
 .line {
 	border:4px solid #5e42b0;
@@ -153,8 +154,7 @@ header {
 }
 .line-position {
 	position:relative;
-	top: 40%;
-	left: -20%;
+	margin-left: 15%;
 	z-index:2;
 }
 .navigation {

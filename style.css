@@ -82,6 +82,38 @@ footer, header, hgroup, menu, nav, section {
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+  font-family: 'fontello';
+  src: url('fonts/fontello.eot?72618168');
+  src: url('fonts/fontello.eot?72618168#iefix') format('embedded-opentype'),
+       url('fonts/fontello.woff2?72618168') format('woff2'),
+       url('fonts/fontello.woff?72618168') format('woff'),
+       url('fonts/fontello.ttf?72618168') format('truetype'),
+       url('fonts/fontello.svg?72618168#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+}
+.icon-twitter:before { content: '\e801'; }
+.icon-facebook:before { content: '\e802'; }
+.icon-instagram:before { content: '\e803'; }
+
+
 .wrapper {
 	background-color: #fff;
 	box-sizing: border-box;
@@ -91,15 +123,33 @@ footer, header, hgroup, menu, nav, section {
 	font-style: normal;
 	font-size: 14px;
 	max-width: 1900px;
+	min-width: 320px;
 }
-header {
-	background: url(images/football.jpg) no-repeat 50% 50% #0a0e34;
+header, footer {
 	width: 100%;
 	height: 960px;
+}
+header {
+	background: url("images/football.jpg") no-repeat 50% 50% #0a0e34;
+}
+footer {
+	background: url("images/stadium.jpg") no-repeat 50% 50% #0a0e34;
+	background-size: auto 100%;
+	position: relative;
 }
 .header {
 	padding: 5% 10% 0 10%;
 	margin: 0 auto;
+}
+.footer {
+	box-sizing: border-box;
+	height: 170px;
+	width: 100%;
+	background-color: #0a0e34;
+	background-color: rgba(10,14,52, .6);
+	position: absolute;
+	bottom: 0;
+	padding: 70px 50px;
 }
 .clearfix:after{
     content:'';
@@ -112,7 +162,7 @@ header {
 	height: 45px;
 	background: url("images/logo.png") no-repeat 50% 50%;
 }
-.head_label {
+.label {
 	float: right;
 }
 .button {
@@ -134,14 +184,19 @@ header {
 	margin-top: 16%;
 	padding: 0 3%;
 }
-.caption .first-part {
+.first-part {
 	position: relative;
 	z-index: 3;
 }
-.caption .second-part {
+h1.second-part {
 	position: relative;
 	z-index: 1;
 	margin-left: 25%;
+}
+h2.second-part {
+	position: relative;
+	z-index: 3;
+	
 }
 .line {
 	border: 4px solid #5e42b0;
@@ -149,6 +204,7 @@ header {
 	height: 0;
 	transform: rotate(-50deg);
 	border-radius: 50px;
+	margin: 0;
 }
 .line-position {
 	position: relative;
@@ -163,40 +219,75 @@ header {
 	display: inline-block;
 	margin-left: 6%;
 }
-.icon-apple {
+.icon_apple {
 	background: url("images/icon-apple.png") no-repeat 10% 50% #5e42b0;
 }
-.icon-google_play {
+.icon_google_play {
 	background: url("images/icon-google_play.png") no-repeat 10% 50% #5e42b0;
 }
-
+.social-icon {
+	margin-left: 35%;
+	float: left;
+}
+.icon-logo {
+	width: 130px;
+	height: 135px;
+	background: url("images/icon-logo.png") no-repeat 50% 50% #6f4ace;
+	background-size: 100%;
+	border-radius: 30px;
+	float: left;
+	margin-right: 2%;
+}
+.footer-caption {
+	padding: 15% 20% 8%;
+	margin: 0;
+}
+footer .button_panel {
+	margin-top: 0;
+}
+.left-line {
+	width: 230px;
+}
+.right-line {
+	width: 350px;
+}
+.left-line.line-position {
+	right: 30px;
+	bottom: 25px;
+}
+ .right-line.line-position {
+	left: 320px;
+	bottom: 25px;
+}
 /********Настройка оформления**********/
-.head_label span, .navigation a, a.button p {
+a.label, .navigation a, a.button p {
 	font-family: "Proxima Nova Lt";
 	font-weight: 300;
 	/*line-height: 34.49px;*/
 	letter-spacing: .05em;
 	text-transform: uppercase;
 }
-.head_label span {
+a.label, .icon-twitter, .icon-facebook, .icon-instagram {
 	line-height: 2.46em;
+	text-decoration: none;
+	color: #fff;
 }
 .navigation a {
 	color: #9071ea;
 	text-decoration: none;
 }
 .navigation a:hover {
-	color: #ffffff;
+	color: #fff;
 }
 a.button {
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none;
 	text-align:left;
 }
 p span {
 	font-weight: 600;
 }
-.caption h1 {
+.first-part, .second-part {
 	font-weight: bold;
 	font-size: 6.43em;
 	line-height: .89em;
@@ -204,9 +295,20 @@ p span {
 	text-transform: uppercase;
 	text-align: left;
 }
+h2.second-part {
+	color: #a496ca;
+	font-size: 2.57em;
+}
+.icon-twitter, .icon-facebook, .icon-instagram {
+	font-size: 20px;
+}
+.footer a.label {
+	text-transform: capitalize;
+}
+
 /****** Медиа запросы **********/
 @media all and (max-width: 768px) {
-/****************Шапка*************/
+/****************Шапка и футер*************/
 	.header {
 		padding: 5% 2%;
 		background-size: cover;
@@ -227,11 +329,10 @@ p span {
 		margin-top: 22%;
 		font-size: 1.14em;
 	}
-	.caption h1 {
+	h1.first-part, h1.second-part {
 		font-size: 4.57em;
-		
 	}
-	.caption h1.second-part {
+	h1.second-part {
 		line-height: 1.2em;
 	}
 	.button {
@@ -240,11 +341,57 @@ p span {
 	.button_panel {
 		padding-left: 5%;
 	}
+	.footer-caption {
+		padding: 15% 0 8%;
+	}
+	.icon-logo {
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	footer .button_panel {
+		margin-top: 20%;
+	}
+	.footer {
+		height: 90px;
+		padding:0;
+	}
+	.footer .logo, .footer .label {
+		display: none;
+	}
+	.social-icon {
+		margin-left: 40%;
+	}
+	.icon-twitter, .icon-facebook, .icon-instagram {
+	font-size: 36px;
+	}
+	.footer-caption .first-part {
+		margin-left: 15%;
+		margin-top: 15%;
+	}
+	.footer-caption .second-part {
+		margin-left: 7%;
+		letter-spacing: 0;
+	}
+	.left-line {
+	width: 150px;
+	}
+	.right-line {
+		width: 280px;
+	}
+	.left-line.line-position {
+		right: 15px;
+		top: -15px;
+	}
+	 .right-line.line-position {
+		left: 200px;
+		top: -15px;
+	}
 	/********Основное содержимое**************/
 }
 @media all and (max-width: 320px) {
-	/****************Шапка*************/
-	header {
+	/****************Шапка и футер*************/
+	header, footer {
 		height: 570px;
 		background-size: cover;
 		position: relative;
@@ -256,26 +403,29 @@ p span {
 		background-size: auto 100%;
 		margin: 20px 25%;
 	}
-	.head_label {
+	.label {
 		display: none;
 	}
 	.caption {
-		margin-top: 35%;
+		margin-top: 120px;
 	}
-	.caption .second-part {
-		margin-left: 15%;
+	h1.first-part {
+		margin-bottom: 10px;
 	}
-	.caption h1 {
-		font-size: 2.29em;
-		line-height: .6em;
+	h1.second-part {
+		margin-left: 10%
+		/*line-height: .6em;*/
+	}
+	h1.first-part, h1.second-part {
+		font-size: 2.28em;
 	}
 	.line {
-		width: 200px;
+		width: 220px;
 		border: 2px solid #5e42b0;
 	}
 	.line-position {
 		z-index: 0;
-		top: 22px;
+		top: 20px;
 	}
 	.button {
 		height: 40px;
@@ -287,10 +437,10 @@ p span {
 		font-size: .67em;
 	}
 	.button_panel {
-		margin-top: 35%;
-		padding-left: 3%;
+		margin-top: 30%;
+		padding-left: 0;
 	}
-	.icon-apple, .icon-google_play {
+	.icon_apple, .icon_google_play {
 		background-size: 20px auto;
 	}
 	.navigation {
@@ -305,6 +455,49 @@ p span {
 	}
 	.navigation li:nth-child(4), li:last-child {
 		margin-left: 15%;
+	}
+	.footer {
+		height: 50px;
+		padding: 0;
+	}
+	.footer .logo, .footer .label {
+		display: none;
+	}
+	.icon-twitter, .icon-facebook, .icon-instagram {
+	font-size: 15px;
+	}
+	.footer-caption {
+		padding-left: 0;
+		margin-bottom: 20%;
+	}
+	.icon-logo {
+		float: none;
+		display: block;
+		margin: 15% auto;
+		height: 80px;
+		width: 75px;
+		border-radius: 15px;
+	}
+	.footer-caption .first-part {
+		margin: 0 5%;
+	}
+	h2.second-part {
+		font-size: 1.07em;
+		margin: 0 1%;
+	}
+	.left-line {
+	width: 90px;
+	}
+	.right-line {
+		width: 130px;
+	}
+	.left-line.line-position {
+		right: 45px;
+		top: -10px;
+	}
+	 .right-line.line-position {
+		left: 70px;
+		top: -10px;
 	}
 	/********Основное содержимое**************/
 }
